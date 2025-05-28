@@ -3,9 +3,9 @@ import mongoose from "mongoose";
 const foundReportSchema = new mongoose.Schema(
   {
     qrId: { type: mongoose.Schema.Types.ObjectId, ref: "QRCode" },
-    finderName: { type: String, required: true },
-    finderPhone: { type: String, required: true },
-    email: { type: String, required: true },
+    finderName: { type: String },
+    finderPhone: { type: String },
+    email: { type: String },
     locationLink: { type: String }, // NEW
     createdAt: { type: Date, default: Date.now },
     rewardClaimed: { type: Boolean, default: false },

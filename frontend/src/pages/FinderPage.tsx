@@ -138,7 +138,6 @@ const FinderPage = () => {
                   <input
                     type="text"
                     id="name"
-                    required
                     value={form.finderName}
                     onChange={(e) => handleChange("finderName", e.target.value)}
                     className="block w-full px-3 py-2 pl-10 bg-base-200 border border-base-content/20 rounded-md shadow-sm placeholder-base-content/50 focus:outline-none focus:base-content/50 focus:border-base-content/50 sm:text-sm"
@@ -160,7 +159,6 @@ const FinderPage = () => {
                   <input
                     type="email"
                     id="email"
-                    required
                     value={form.email}
                     onChange={(e) => handleChange("email", e.target.value)}
                     className="block w-full px-3 py-2 pl-10 bg-base-200 border border-base-content/20 rounded-md shadow-sm placeholder-base-content/50 focus:outline-none focus:base-content/50 focus:border-base-content/50 sm:text-sm"
@@ -185,7 +183,6 @@ const FinderPage = () => {
                     id="phone"
                     inputMode="numeric"
                     pattern="^\+?[0-9]{10,15}$"
-                    required
                     value={form.finderPhone}
                     onChange={(e) =>
                       handleChange("finderPhone", e.target.value)
@@ -214,6 +211,7 @@ const FinderPage = () => {
                     type="url"
                     id="location"
                     value={form.locationLink}
+                    readOnly
                     onChange={(e) =>
                       handleChange("locationLink", e.target.value)
                     }
@@ -248,13 +246,10 @@ const FinderPage = () => {
       {instruction && (
         <Instructions
           label="Found a lost item?"
-          instruction="Please help us return it to its rightful owner.
-
-You’ll be shown the owner’s contact details (phone and email) after submitting this form.
-
-Fill out the form below with your contact info and location.
-
-If the owner confirms the item was truly theirs, you’ll receive a $0.50 reward as a thank-you!"
+          instruction="Help return this item to its owner.
+Submit the form below with your contact info and where you found it.
+Once submitted, you'll see the owner's contact details.
+If they confirm it's theirs, you'll receive a $0.50 reward as thanks!"
           setInstruction={setInstruction}
         />
       )}
