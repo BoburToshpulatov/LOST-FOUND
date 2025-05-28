@@ -28,6 +28,7 @@ const Login = () => {
     resendVerificationCode,
     verifyEmailCode,
     verifyLoginCode,
+    fetchProfile,
   } = useAuthStore();
   const { qrCode, registerQRCode, fetchQRCode } = useQrCode();
 
@@ -62,6 +63,7 @@ const Login = () => {
       setVerifyCode(false);
       await registerQRCode(id!);
       fetchQRCode(id!);
+      fetchProfile();
       navigate(`/owner`);
     }
   };
@@ -76,6 +78,7 @@ const Login = () => {
       setVerifyLogin(false);
       setVerifyEmail(false);
       navigate(`/owner`);
+      fetchProfile();
       if (!qrCode?.isRegistered) {
         await registerQRCode(id!);
         fetchQRCode(id!);

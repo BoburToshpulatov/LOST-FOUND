@@ -36,6 +36,7 @@ const SignUp = () => {
     verifyEmailCode,
     resetForm,
     resendVerificationCode,
+    fetchProfile,
   } = useAuthStore();
   const [verifyEmail, setVerifyEmail] = useState<boolean>(false);
   const [verifyCode, setVerifyCode] = useState<boolean>(false);
@@ -63,6 +64,7 @@ const SignUp = () => {
       setVerifyCode(false);
       await registerQRCode(id!);
       fetchQRCode(id!);
+      fetchProfile();
       navigate(`/owner`);
     }
   };
