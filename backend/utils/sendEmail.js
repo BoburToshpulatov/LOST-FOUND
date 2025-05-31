@@ -13,7 +13,7 @@ export async function sendEmail({ to, subject, html, text, replyTo }) {
   });
 
   await transporter.sendMail({
-    from: `"FindMe" <${process.env.SMTP_USER}>`,
+    from: `"LOST&FOUND" <${process.env.SMTP_USER}>`,
     to,
     subject,
     text: text || html.replace(/<[^>]+>/g, ""), // Fallback to plain text version
