@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Instructions from "../components/Instructions";
 import useUserLocation from "../lib/LocationLink";
-import { useParams } from "react-router-dom";
-import { Mail, MapPin, Phone, User } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
+import { ArrowRight, Mail, MapPin, Phone, User } from "lucide-react";
 import { useReportStore } from "../store/useReportStore";
 import { useQrCode } from "../store/useQrCode";
 
@@ -239,6 +239,17 @@ const FinderPage = () => {
                 Send to Owner
               </button>
             </form>
+
+            <p className="mt-8 text-center text-sm text-base-content">
+              Are you an owner of this item?{" "}
+              <Link
+                onClick={() => resetForm()}
+                to={`/login/${id}`}
+                className="font-medium text-primary hover:text-primary/80 transition duration-150 ease-in-out"
+              >
+                Login here <ArrowRight className="inline h-4 w-4" />
+              </Link>
+            </p>
           </div>
         )}
       </motion.div>
