@@ -43,7 +43,7 @@ export const registerUser = async (req, res) => {
       subject: `🔐 Verify Your Email, ${name}`,
       html: `
         <div style="max-width: 500px; margin: auto; padding: 20px; font-family: 'Segoe UI', sans-serif; background-color: #f9f9f9; border-radius: 8px; color: #333; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-          <h2 style="color: #4CAF50; text-align: center;">Welcome to FindMe, ${name}!</h2>
+          <h2 style="color: #4CAF50; text-align: center;">Welcome to Lost&Found, ${name}!</h2>
           <p style="font-size: 16px;">To complete your registration, please verify your email using the code below:</p>
           <div style="text-align: center; margin: 20px 0;">
             <span style="display: inline-block; font-size: 26px; font-weight: bold; background: #e8f5e9; color: #2e7d32; padding: 12px 24px; border-radius: 6px; letter-spacing: 4px;">
@@ -168,11 +168,11 @@ export const requestLogin = async (req, res) => {
 
     await sendEmail({
       to: email,
-      subject: "🔐 Your FindMe Login Code",
+      subject: "🔐 Your LOST&FOUND Login Code",
       html: `
         <div style="max-width: 500px; margin: auto; padding: 20px; font-family: 'Segoe UI', sans-serif; background-color: #f4f6f8; border-radius: 8px; color: #333; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);">
           <h2 style="color: #4CAF50; text-align: center;">Your Login Code</h2>
-          <p style="font-size: 16px;">Use the code below to log in to your FindMe account:</p>
+          <p style="font-size: 16px;">Use the code below to log in to your LOST&FOUND account:</p>
           <div style="text-align: center; margin: 20px 0;">
             <span style="display: inline-block; font-size: 28px; font-weight: bold; background: #e8f5e9; color: #2e7d32; padding: 12px 24px; border-radius: 6px; letter-spacing: 4px;">
               ${code}
@@ -180,8 +180,8 @@ export const requestLogin = async (req, res) => {
           </div>
           <p style="font-size: 14px;">This code will expire in 10 minutes. If you didn’t request it, you can ignore this email.</p>
           <p style="font-size: 12px; color: #888; text-align: center; margin-top: 30px;">
-            Need help? Contact us at <a href="mailto:support@findme.com">support@findme.com</a><br/>
-            © ${new Date().getFullYear()} FindMe
+            Need help? Contact us at <a href="mailto:support@lost&found.com">support@lost&found.com</a><br/>
+            © ${new Date().getFullYear()} LOST&FOUND
           </p>
         </div>
       `,
